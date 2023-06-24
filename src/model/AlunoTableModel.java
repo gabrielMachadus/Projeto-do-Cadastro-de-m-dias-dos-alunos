@@ -1,6 +1,6 @@
 package model;
 
-import javax.swing.table.AbstractTableModel;
+import javax.swing.table.AbstractTableModel; 
 import java.util.List;
 
 public class AlunoTableModel extends AbstractTableModel {

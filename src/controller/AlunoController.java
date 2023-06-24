@@ -5,7 +5,7 @@ import model.AlunoTableModel;
 
 import java.util.ArrayList;
 import java.util.List;
-
+ 
 public class AlunoController {
     private List<Aluno> alunos;
     private AlunoTableModel tableModel;

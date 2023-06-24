@@ -1,7 +1,7 @@
 package model;
 
 public class Aluno {
-    private String nome;
+    private String nome; 
     private double nota1;
     private double nota2;
 
