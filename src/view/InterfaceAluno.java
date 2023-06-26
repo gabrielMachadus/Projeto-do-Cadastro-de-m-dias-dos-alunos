@@ -118,6 +118,7 @@ public class InterfaceAluno extends JFrame {
                 boolean valido = validarCampos(nome, nota1, nota2);
                 if(valido) {
                 	Aluno aluno = new Aluno(nome, nota1, nota2);
+                	
                     alunoController.adicionarAluno(aluno);
 
                     textFieldNome.setText("");
@@ -129,6 +130,7 @@ public class InterfaceAluno extends JFrame {
                     textFieldNome.setEnabled(false);
                     textFieldNota01.setEnabled(false);
                     textFieldNota02.setEnabled(false);
+                    
                     JOptionPane.showMessageDialog(scrollPane, "Cadastrado com sucesso!");
                 }else {
                 	JOptionPane.showMessageDialog(scrollPane, "Inconsistencias encontradas nas informações! "
