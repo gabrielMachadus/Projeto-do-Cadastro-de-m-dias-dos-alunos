@@ -34,4 +34,33 @@ public class Aluno {
             return "Reprovado";
         }
     }
+    
+	public String mensagemValidacao(String nome, double nota1, double nota2) {
+		String mensagem = "";
+
+		if (nome.trim().equals("")) {
+			mensagem.concat("\nCampo do Nome Vazio! O mesmo deve ser preenchido.");
+		}
+
+		if (nota1 > 10) {
+			mensagem.concat("\nCampo nota 01 com valor maior que limite. Valor máximo é 10!");
+		}
+
+		if (nota2 > 10) {
+			mensagem.concat("\nCampo nota 02 com valor maior que limite. Valor máximo é 10!");
+		}
+
+		if (nota1 < 0) {
+			mensagem.concat("\nCampo nota 01 com valor inferior ao limite. Valor minimo é 0!");
+		}
+
+		if (nota2 < 0) {
+			mensagem.concat("\nCampo nota 02 com valor inferior ao limite. Valor minimo é 0!");
+		}
+
+		return mensagem;
+
+	}
+    
+    
 }

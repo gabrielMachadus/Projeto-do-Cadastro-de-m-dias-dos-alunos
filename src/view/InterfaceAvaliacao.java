@@ -1,5 +1,10 @@
 package view;
-
+/*
+ * public static void main(String[] args) { SwingUtilities.invokeLater(new
+ * Runnable() {
+ * 
+ * @Override public void run() { new InterfaceAluno(); } }); }
+ */
 import controller.AlunoController;
 import model.Aluno;
 import model.AlunoTableModel;
@@ -9,7 +14,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class InterfaceAluno extends JFrame {
+public class InterfaceAvaliacao extends JFrame {
     private JTextField textFieldNome;
     private JTextField textFieldNota01;
     private JTextField textFieldNota02;
@@ -19,14 +24,14 @@ public class InterfaceAluno extends JFrame {
 
     private AlunoController alunoController;
 
-    public InterfaceAluno() {
+    public InterfaceAvaliacao() {
         alunoController = new AlunoController();
         initializeUI();
     }
 
     private void initializeUI() {
         setTitle("Cadastro de Alunos");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setPreferredSize(new Dimension(400, 300));
 
         JPanel panel = new JPanel(new GridBagLayout());
@@ -46,6 +51,7 @@ public class InterfaceAluno extends JFrame {
 
         textFieldNome = new JTextField(20);
         textFieldNome.setEnabled(false);
+       
         constraints.gridx = 1;
         constraints.gridy = 0;
         constraints.gridwidth = 2;
@@ -118,6 +124,7 @@ public class InterfaceAluno extends JFrame {
                 boolean valido = validarCampos(nome, nota1, nota2);
                 if(valido) {
                 	Aluno aluno = new Aluno(nome, nota1, nota2);
+                	
                     alunoController.adicionarAluno(aluno);
 
                     textFieldNome.setText("");
@@ -129,6 +136,7 @@ public class InterfaceAluno extends JFrame {
                     textFieldNome.setEnabled(false);
                     textFieldNota01.setEnabled(false);
                     textFieldNota02.setEnabled(false);
+                    
                     JOptionPane.showMessageDialog(scrollPane, "Cadastrado com sucesso!");
                 }else {
                 	JOptionPane.showMessageDialog(scrollPane, "Inconsistencias encontradas nas informações! "
@@ -168,12 +176,5 @@ public class InterfaceAluno extends JFrame {
         setVisible(true);
     }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                new InterfaceAluno();
-            }
-        });
-    }
+	
 }
